@@ -10,6 +10,9 @@ const redirectRoutes = require('./routes/redirect');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Trust reverse proxy (Vercel) to get correct client IP from X-Forwarded-For
+app.set('trust proxy', true);
+
 // Security middleware
 app.use(helmet());
 
