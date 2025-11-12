@@ -49,8 +49,5 @@ temp/
 # Railway
 .railway
 
-# Frontend environment config (if sensitive)
-frontend/js/config.js
-
 # Misc
 .env.backup
