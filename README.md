@@ -144,7 +144,7 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/custom-qr-generator.git
+git remote add origin https://github.com/ch3fxic/custom-qr-generator.git
 git push -u origin main
 ```
 
@@ -322,10 +322,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter)
-
-Project Link: [https://github.com/YOUR_USERNAME/custom-qr-generator](https://github.com/YOUR_USERNAME/custom-qr-generator)
+Project Link: [https://github.com/ch3fxic/custom-qr-generator](https://github.com/ch3fxic/custom-qr-generator)
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by ch3fxic

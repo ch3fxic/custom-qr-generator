@@ -24,7 +24,7 @@ GitHub Pages is free and perfect for static sites.
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/custom-qr-generator.git
+   git remote add origin https://github.com/ch3fxic/custom-qr-generator.git
    git push -u origin main
    ```
 
@@ -40,7 +40,7 @@ GitHub Pages is free and perfect for static sites.
 
 ### Step 3: Update Configuration
 
-Your site will be at: `https://YOUR_USERNAME.github.io/custom-qr-generator/`
+Your site will be at: `https://ch3fxic.github.io/custom-qr-generator/`
 
 Update `frontend/js/config.js`:
 ```javascript
@@ -65,7 +65,7 @@ git push
    ```
    Type: CNAME
    Name: @
-   Value: YOUR_USERNAME.github.io
+   Value: ch3fxic.github.io
    ```
 
 ---
