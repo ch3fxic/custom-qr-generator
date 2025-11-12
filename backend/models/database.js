@@ -133,8 +133,8 @@ const getAnalytics = (qrId) => {
           return;
         }
 
-        // Get unique IPs
-        db.get('SELECT COUNT(DISTINCT ip) as unique FROM scans WHERE qr_id = ?', [qrId], (err, uniqueRow) => {
+        // Get unique IPs (avoid reserved alias names)
+        db.get('SELECT COUNT(DISTINCT ip) as unique_count FROM scans WHERE qr_id = ?', [qrId], (err, uniqueRow) => {
           if (err) {
             reject(err);
             return;
@@ -156,7 +156,7 @@ const getAnalytics = (qrId) => {
                 styleOptions: qrCode.style_options ? JSON.parse(qrCode.style_options) : null,
                 createdAt: qrCode.created_at,
                 totalScans: totalRow.total,
-                uniqueScans: uniqueRow.unique,
+                uniqueScans: uniqueRow.unique_count,
                 scans: scans
               });
             }
