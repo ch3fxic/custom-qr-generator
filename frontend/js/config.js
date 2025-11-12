@@ -29,8 +29,6 @@ const CONFIG = {
 
 // Detect if running on GitHub Pages and adjust API URL
 if (window.location.hostname.includes('github.io')) {
-    // TODO: Update this to your actual Vercel backend URL after deployment
-    // Example: CONFIG.API_URL = 'https://custom-qr-generator-abc123.vercel.app';
-    CONFIG.API_URL = 'https://your-backend.vercel.app'; // ⚠️ REPLACE THIS!
+    CONFIG.API_URL = 'https://custom-qr-generator-eight.vercel.app';
     console.log('Running on GitHub Pages, using production API');
 }
