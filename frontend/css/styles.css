@@ -1,4 +1,4 @@
-/* Custom styles for QR Code Generator */
+/* Custom styles for QR Code Generator (Revamped UI) */
 
 /* Smooth transitions */
 * {
@@ -50,6 +50,7 @@ input[type="file"]::file-selector-button:hover {
 /* QR Preview animation */
 #qrPreview canvas {
     animation: fadeIn 0.5s ease-in;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12));
 }
 
 @keyframes fadeIn {
@@ -63,28 +64,9 @@ input[type="file"]::file-selector-button:hover {
     }
 }
 
-/* Button hover effects */
-button {
-    position: relative;
-    overflow: hidden;
-}
-
-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-button:active::before {
-    width: 300px;
-    height: 300px;
+/* Subtle interactive button pulse (only for .group buttons) */
+.group:active {
+    transform: translateY(1px) scale(0.99);
 }
 
 /* Alert animations */
@@ -110,7 +92,7 @@ button:active::before {
 
 .recent-qr-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Loading spinner */
@@ -137,9 +119,16 @@ button:active::before {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     #qrPreview canvas {
-        max-width: 100%;
-        height: auto;
+            max-width: 100%;
+            height: auto;
     }
+    header h1 { font-size: 2.1rem; }
+}
+
+/* Accent focus ring helper */
+.focus-ring-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.4);
 }
 
 /* Print styles */
