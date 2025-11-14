@@ -57,18 +57,17 @@ custom-qr-generator/
 ## 🛠️ Tech Stack
 
 ### Frontend
-- HTML5
-- Tailwind CSS (via CDN)
-- Vanilla JavaScript
-- QR Code Styling library
-- jsPDF (for PDF export)
+- HTML5 & Tailwind CSS (via CDN) - Modern, responsive UI with hero header and feature badges
+- Vanilla JavaScript - No framework dependencies
+- QR Code Styling library - Advanced QR code generation with customization
+- jsPDF - PDF export functionality
 
 ### Backend
-- Node.js
-- Express.js
-- SQLite3
-- CORS middleware
-- Express Rate Limit
+- Node.js & Express.js - RESTful API server
+- SQLite3 - Local development database
+- Turso/libSQL - Optional persistent database for production (recommended for Vercel)
+- CORS & Helmet - Security middleware
+- Express Rate Limit - API rate limiting
 
 ## 📦 Installation
 
@@ -178,44 +177,18 @@ vercel
 
 4. Set environment variables in Vercel dashboard:
    - `NODE_ENV=production`
-   - `FRONTEND_URL=https://your-username.github.io`
+   - `FRONTEND_URL=https://ch3fxic.github.io`
+   - `SHORT_URL_DOMAIN=https://your-project.vercel.app`
    - `DATABASE_PATH=/tmp/database.sqlite`
 
-5. Note: For production, consider using a cloud database (MongoDB, PostgreSQL) instead of SQLite
-
-### Backend Deployment (Railway)
-
-1. Install Railway CLI:
-```bash
-npm install -g @railway/cli
-```
-
-2. Login to Railway:
-```bash
-railway login
-```
-
-3. Initialize and deploy:
-```bash
-cd backend
-railway init
-railway up
-```
-
-4. Set environment variables:
-```bash
-railway variables set NODE_ENV=production
-railway variables set FRONTEND_URL=https://your-username.github.io
-```
-
-### Backend Deployment (Render)
-
-1. Create a new Web Service on [Render.com](https://render.com)
-2. Connect your GitHub repository
-3. Configure:
-   - **Build Command**: `cd backend && npm install`
-   - **Start Command**: `cd backend && npm start`
-   - **Environment Variables**: Add all variables from `.env.example`
+5. **Important**: For production persistence, configure Turso/libSQL:
+   - Sign up at [turso.tech](https://turso.tech) (free tier available)
+   - Create a database and get connection URL + auth token
+   - Add to Vercel environment variables:
+     - `TURSO_CONNECTION_URL=libsql://your-db.turso.io`
+     - `TURSO_AUTH_TOKEN=your-token-here`
+   - The app will automatically use Turso when these variables are set
+   - Without Turso, SQLite on Vercel is ephemeral (data resets on redeploy)
 
 ## 📖 API Documentation
 
